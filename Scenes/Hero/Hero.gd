@@ -3,7 +3,10 @@ extends KinematicBody2D
 const WALK_FORCE = 600
 const WALK_MAX_SPEED = 200
 const STOP_FORCE = 1300
-const JUMP_SPEED = 200
+const JUMP_SPEED = 350
+
+var state
+
 
 var velocity = Vector2()
 

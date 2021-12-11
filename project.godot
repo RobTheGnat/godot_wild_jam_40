@@ -8,6 +8,28 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Reference",
+"class": "HeroFactory",
+"language": "GDScript",
+"path": "res://Scenes/Hero/State/Hero_Factory.gd"
+}, {
+"base": "HeroState",
+"class": "HeroIdleState",
+"language": "GDScript",
+"path": "res://Scenes/Hero/State/Hero_Idle.gd"
+}, {
+"base": "Node2D",
+"class": "HeroState",
+"language": "GDScript",
+"path": "res://Scenes/Hero/State/Hero_State.gd"
+} ]
+_global_script_class_icons={
+"HeroFactory": "",
+"HeroIdleState": "",
+"HeroState": ""
+}
+
 [application]
 
 config/name="godot_wild_jam_40"
@@ -55,6 +77,7 @@ ui_down={
 [physics]
 
 common/enable_pause_aware_picking=true
+2d/default_gravity=900
 
 [rendering]
 
