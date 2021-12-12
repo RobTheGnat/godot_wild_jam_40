@@ -12,7 +12,7 @@ extents = Vector2( 9, 8.5 )
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("Walk:frame")
+tracks/0/path = NodePath("walk:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -27,7 +27,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
 tracks/0/type = "value"
-tracks/0/path = NodePath("Idle:frame")
+tracks/0/path = NodePath("idle:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -43,7 +43,7 @@ tracks/0/keys = {
 resource_name = "jump"
 length = 0.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("Jump:frame")
+tracks/0/path = NodePath("jump:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -57,24 +57,25 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 resource_name = "walk"
-length = 0.2
+length = 0.25
+loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Walk:frame")
+tracks/0/path = NodePath("walk:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
+"times": PoolRealArray( 0, 0.1, 0.25 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 0 ]
+"values": [ 1, 0, 1 ]
 }
 
 [node name="Hero" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
-[node name="Idle" type="Sprite" parent="."]
+[node name="idle" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 3
 
@@ -86,22 +87,21 @@ shape = SubResource( 1 )
 current = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "walk"
 anims/RESET = SubResource( 3 )
 anims/idle = SubResource( 2 )
 anims/jump = SubResource( 5 )
 anims/walk = SubResource( 4 )
 
-[node name="Walk" type="Sprite" parent="."]
+[node name="walk" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 3 )
 hframes = 2
 
-[node name="Fall" type="Sprite" parent="."]
+[node name="fall" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 4 )
 
-[node name="Jump" type="Sprite" parent="."]
+[node name="jump" type="Sprite" parent="."]
 visible = false
 texture = ExtResource( 5 )
 hframes = 4

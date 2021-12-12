@@ -2,7 +2,6 @@ extends "res://Scenes/Hero/State/Hero_State.gd"
 
 class_name HeroJumpState
 
-const JUMP_SPEED = 350
 
 
 func _ready():
@@ -16,8 +15,9 @@ var velocity = Vector2()
 
 func _physics_process(delta): 
 	# Vertical movement code. Apply gravity.
-	persistent_state.velocity.y += gravity * delta
-	if (persistent_state.velocity.y <= 0):
+#	persistent_state.velocity.y += gravity * delta
+	print (persistent_state.velocity.y)
+	if (persistent_state.velocity.y >= 0):
 		change_state.call_func("fall")
 
 	# Move based on the velocity and snap to the ground.

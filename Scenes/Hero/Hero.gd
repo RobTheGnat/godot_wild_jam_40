@@ -32,9 +32,12 @@ func _physics_process(_delta):
 
 	# Move based on the velocity and snap to the ground.
 	#velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
+	if Input.is_action_pressed('ui_right'):
+		state.move_right()
 
+	if Input.is_action_pressed('ui_left'):
+		state.move_left()
 	# Check for jumping. is_on_floor() must be called after movement code.
-	print(is_on_floor())
 	if is_on_floor() and Input.is_action_just_pressed("ui_up"):
 		state.move_up()
 
@@ -44,9 +47,9 @@ func change_state(new_state_name):
 	print(new_state_name)
 	state = state_factory.get_state(new_state_name).new()
 	state.setup(funcref(self, "change_state"), $AnimationPlayer, self)
-	#state.name = new_state_name
-	$Walk.set_visible(new_state_name == "walk")
-	$Fall.set_visible(new_state_name == "fall")
-	$Jump.set_visible(new_state_name == "jump")
-	$Idle.set_visible(new_state_name == "idle")
+	state.state_name = new_state_name
+	$walk.set_visible(new_state_name == "walk")
+	$fall.set_visible(new_state_name == "fall")
+	$jump.set_visible(new_state_name == "jump")
+	$idle.set_visible(new_state_name == "idle")
 	add_child(state)
