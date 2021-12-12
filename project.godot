@@ -15,19 +15,37 @@ _global_script_classes=[ {
 "path": "res://Scenes/Hero/State/Hero_Factory.gd"
 }, {
 "base": "HeroState",
+"class": "HeroFallState",
+"language": "GDScript",
+"path": "res://Scenes/Hero/State/Hero_Fall.gd"
+}, {
+"base": "HeroState",
 "class": "HeroIdleState",
 "language": "GDScript",
 "path": "res://Scenes/Hero/State/Hero_Idle.gd"
 }, {
-"base": "Node2D",
+"base": "KinematicBody2D",
+"class": "HeroJumpState",
+"language": "GDScript",
+"path": "res://Scenes/Hero/State/Hero_Jump.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "HeroState",
 "language": "GDScript",
 "path": "res://Scenes/Hero/State/Hero_State.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "HeroWalkState",
+"language": "GDScript",
+"path": "res://Scenes/Hero/State/Hero_Walk.gd"
 } ]
 _global_script_class_icons={
 "HeroFactory": "",
+"HeroFallState": "",
 "HeroIdleState": "",
-"HeroState": ""
+"HeroJumpState": "",
+"HeroState": "",
+"HeroWalkState": ""
 }
 
 [application]

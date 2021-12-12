@@ -5,11 +5,12 @@ var states
 func _init():
 	states = {
 		"idle": HeroIdleState,
-		"walk": TowerAttackState,
-		"jump": TowerGroundAttackState
+		"walk": HeroWalkState,
+		"jump": HeroJumpState,
+		"fall": HeroFallState
 }
 
-func get_state(state_name) -> HeroState :
+func get_state(state_name) :
 	if states.has(state_name):
 		return states.get(state_name)
 	else:
