@@ -25,6 +25,7 @@ func move_left():
 		_flip_direction()
 
 func move_right():
+
 	if not persistent_state.get_node(state_name).flip_h:
 		change_state.call_func("walk")
 	else:

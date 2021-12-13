@@ -75,6 +75,19 @@ tracks/0/keys = {
 [node name="Hero" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
+[node name="fadeAway" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -128.0
+margin_top = -120.0
+margin_right = 128.0
+margin_bottom = 120.0
+rect_min_size = Vector2( 256, 240 )
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="idle" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 3
@@ -106,3 +119,5 @@ visible = false
 texture = ExtResource( 5 )
 hframes = 4
 frame = 2
+
+[node name="Tween" type="Tween" parent="."]

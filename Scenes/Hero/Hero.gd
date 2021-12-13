@@ -13,25 +13,8 @@ var velocity = Vector2()
 func _ready():
 	state_factory = HeroFactory.new()
 	change_state("fall")
-#onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _physics_process(_delta):
-	# Horizontal movement code. First, get the player's input.
-	#var walk = WALK_FORCE * (Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"))
-	# Slow down the player if they're not trying to move.
-	#if abs(walk) < WALK_FORCE * 0.2:
-		# The velocity, slowed down a bit, and then reassigned.
-	#	velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
-	#else:
-	#	velocity.x += walk * delta
-	# Clamp to the maximum horizontal movement speed.
-	#velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
-
-	# Vertical movement code. Apply gravity.
-	#velocity.y += gravity * delta
-
-	# Move based on the velocity and snap to the ground.
-	#velocity = move_and_slide_with_snap(velocity, Vector2.DOWN, Vector2.UP)
 	if Input.is_action_pressed('ui_right'):
 		state.move_right()
 
@@ -44,7 +27,6 @@ func _physics_process(_delta):
 func change_state(new_state_name):
 	if state != null:
 		state.queue_free()
-	print(new_state_name)
 	state = state_factory.get_state(new_state_name).new()
 	state.setup(funcref(self, "change_state"), $AnimationPlayer, self)
 	state.state_name = new_state_name

@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Loading.gd" type="Script" id=1]
+
+[node name="Loading" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 256, 240 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="CenterContainer"]
+margin_left = 78.0
+margin_top = 105.0
+margin_right = 178.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 100, 30 )
+step = 1.0

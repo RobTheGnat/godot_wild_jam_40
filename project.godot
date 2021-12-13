@@ -38,6 +38,11 @@ _global_script_classes=[ {
 "class": "HeroWalkState",
 "language": "GDScript",
 "path": "res://Scenes/Hero/State/Hero_Walk.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "HeroWinState",
+"language": "GDScript",
+"path": "res://Scenes/Hero/State/Hero_Win.gd"
 } ]
 _global_script_class_icons={
 "HeroFactory": "",
@@ -45,7 +50,8 @@ _global_script_class_icons={
 "HeroIdleState": "",
 "HeroJumpState": "",
 "HeroState": "",
-"HeroWalkState": ""
+"HeroWalkState": "",
+"HeroWinState": ""
 }
 
 [application]
@@ -53,6 +59,10 @@ _global_script_class_icons={
 config/name="godot_wild_jam_40"
 run/main_scene="res://Scenes/MainGame.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Loading="*res://Scenes/Loading/Loading.tscn"
 
 [display]
 

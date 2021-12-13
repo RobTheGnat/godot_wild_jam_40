@@ -7,6 +7,7 @@ func _init():
 		"idle": HeroIdleState,
 		"walk": HeroWalkState,
 		"jump": HeroJumpState,
+		"win" : HeroWinState,
 		"fall": HeroFallState
 }
 

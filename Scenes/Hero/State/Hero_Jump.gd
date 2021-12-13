@@ -13,10 +13,9 @@ var velocity = Vector2()
 
 
 
-func _physics_process(delta): 
+func _physics_process(_delta): 
 	# Vertical movement code. Apply gravity.
 #	persistent_state.velocity.y += gravity * delta
-	print (persistent_state.velocity.y)
 	if (persistent_state.velocity.y >= 0):
 		change_state.call_func("fall")
 

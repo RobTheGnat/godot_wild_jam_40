@@ -9,9 +9,7 @@ func _ready():
 		animation_player.play("walk")
 
 func _physics_process(_delta):
-	print(persistent_state.velocity.x)
 	if abs(persistent_state.velocity.x) <= 0.1:
-		print("chagne ifld")
 		change_state.call_func("idle")
 
 func move_up():
