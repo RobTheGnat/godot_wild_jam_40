@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/Mock/StickFigure-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Hero/Hero.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Mock/StickFigure-walk.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Mock/StickFigure-fall.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Mock/StickFigure-jump.png" type="Texture" id=5]
+[ext_resource path="res://Assets/sound/jump.wav" type="AudioStream" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9, 8.5 )
@@ -118,3 +119,6 @@ hframes = 4
 frame = 2
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="jump_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )

@@ -10,7 +10,7 @@ const WALK_MAX_SPEED = 100
 var friction = .3
 const min_move_speed = 0.005
 const WALK_FORCE = 600
-
+var audio_stream : AudioStreamPlayer2D = null
 
 onready var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 const JUMP_SPEED = 350
@@ -22,10 +22,11 @@ func _physics_process(delta):
 	persistent_state.velocity = persistent_state.move_and_slide_with_snap(persistent_state.velocity, Vector2.DOWN, Vector2.UP)
 
 
-func setup(pass_change_state, pass_animation_player, pass_persistent_state):
+func setup(pass_change_state, pass_animation_player, pass_persistent_state, audio):
 	self.change_state = pass_change_state
 	self.animation_player = pass_animation_player
 	self.persistent_state = pass_persistent_state
+	self.audio_stream = audio
 
 func stop_animation():
 	animation_player.stop()

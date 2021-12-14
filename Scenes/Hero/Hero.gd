@@ -28,7 +28,10 @@ func change_state(new_state_name):
 	if state != null:
 		state.queue_free()
 	state = state_factory.get_state(new_state_name).new()
-	state.setup(funcref(self, "change_state"), $AnimationPlayer, self)
+	if new_state_name == "jump":
+		state.setup(funcref(self, "change_state"), $AnimationPlayer, self, $jump_sound)
+	else:	
+		state.setup(funcref(self, "change_state"), $AnimationPlayer, self, null)
 	state.state_name = new_state_name
 	$walk.set_visible(new_state_name == "walk")
 	$fall.set_visible(new_state_name == "fall")

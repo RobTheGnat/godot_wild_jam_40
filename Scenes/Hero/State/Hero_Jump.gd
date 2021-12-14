@@ -7,6 +7,8 @@ class_name HeroJumpState
 func _ready():
 	if animation_player != null:
 		animation_player.play("jump")
+	if audio_stream:
+		audio_stream.play()
 
 
 var velocity = Vector2()
