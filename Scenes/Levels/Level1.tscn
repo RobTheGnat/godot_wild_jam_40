@@ -51,6 +51,9 @@ tile_data = PoolIntArray( 131121, 0, 0, 131122, 0, 0, 196657, 0, 0, 196658, 0, 0
 
 [node name="Hero" parent="." instance=ExtResource( 2 )]
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Hero"]
+remote_path = NodePath("../../Camera2D")
+
 [node name="Node2D" parent="." instance=ExtResource( 3 )]
 position = Vector2( 792, 23 )
 
@@ -61,5 +64,10 @@ color = Color( 1, 1, 1, 0.294118 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
+smoothing_speed = 4.0
 
 [connection signal="objective_reacted" from="Node2D" to="." method="_on_Node2D_objective_reacted"]

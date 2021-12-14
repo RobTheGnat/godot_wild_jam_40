@@ -96,9 +96,6 @@ hframes = 3
 position = Vector2( 0, -0.5 )
 shape = SubResource( 1 )
 
-[node name="Camera" type="Camera2D" parent="."]
-current = true
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )
 anims/idle = SubResource( 2 )
