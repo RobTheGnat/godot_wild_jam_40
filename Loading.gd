@@ -59,13 +59,21 @@ func _thread_done(resource):
 	progress.visible = false
 	unpause()
 
-func load_scene(path):
+func load_scene_threads(path):
 	pause()
 	thread = Thread.new()
 	thread.start( self, "_thread_load", path)
 	raise() # Show on top.
 	progress.visible = true
 
+func load_scene(path):
+	progress.visible = false
+	pause()
+	var error_code = get_tree().change_scene(path)
+	
+	if error_code != OK:
+		print("ERROR: ", error_code, " whilst trying to load scene: ", path)
+	unpause()
 
 func pause():
 	get_tree().paused = true

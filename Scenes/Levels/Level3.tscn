@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Hero/Hero.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/tilesetter/ground/tileset_ground.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/Objective/Objective.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Levels/Level3.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Levels/CloudPlatform.tscn" type="PackedScene" id=5]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 4 )
@@ -19,5 +20,11 @@ position = Vector2( 73, -6 )
 
 [node name="Objective" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1216, 104 )
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="CloudPlatform" parent="Platforms" instance=ExtResource( 5 )]
+position = Vector2( 1134, 144 )
+move_to = Vector2( 0, -20 )
 
 [connection signal="objective_reacted" from="Objective" to="." method="_on_Objective_objective_reacted"]
